@@ -131,16 +131,3 @@ npm run lint
 - Restrict backend CORS to trusted frontend origins before public deployment.
 - Use synthetic data for demos and testing.
 
-## Deployment
-
-Planned hosting architecture:
-
-- **Database:** Managed PostgreSQL
-- **Backend:** Render
-- **Frontend:** Vercel
-
-Production deployment and end-to-end verification are pending until the hosted services have been configured and tested.
-
-## License
-
-No open-source license has been specified yet. All rights remain subject to the repository owner's applicable rights unless a license is added.
