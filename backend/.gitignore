@@ -62,5 +62,4 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 *.js
 *.js.map
 *.d.ts
-!jest.config.js
 !jest-e2e.json
