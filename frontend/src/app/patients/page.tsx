@@ -57,7 +57,7 @@ export default function PatientsPage() {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/patients`,
+        `${(process.env.NEXT_PUBLIC_API_URL ?? "").replace(/\/+$/, "")}/patients`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

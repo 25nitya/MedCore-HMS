@@ -34,7 +34,7 @@ type Invoice = {
   } | null;
 };
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "").replace(/\/+$/, "");
 
 export default function InvoicesPage() {
   const [invoices, setInvoices] = useState<Invoice[]>([]);

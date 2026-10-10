@@ -49,7 +49,7 @@ export default function DoctorsPage() {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/doctors`,
+        `${(process.env.NEXT_PUBLIC_API_URL ?? "").replace(/\/+$/, "")}/doctors`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

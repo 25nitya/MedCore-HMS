@@ -40,7 +40,7 @@ type Appointment = {
   } | null;
 };
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "").replace(/\/+$/, "");
 
 export default function AppointmentsPage() {
   const [user, setUser] = useState<User | null>(null);
