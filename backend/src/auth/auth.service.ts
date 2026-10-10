@@ -25,12 +25,16 @@ export class AuthService {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
+    // Create the patient user and profile together.
     const user = await this.prisma.user.create({
       data: {
         name,
         email,
         password: hashedPassword,
         role: 'PATIENT',
+        patient: {
+          create: {},
+        },
       },
     });
 
@@ -51,7 +55,10 @@ export class AuthService {
       throw new ConflictException('Invalid email or password');
     }
 
-    const passwordMatches = await bcrypt.compare(password, user.password);
+    const passwordMatches = await bcrypt.compare(
+      password,
+      user.password,
+    );
 
     if (!passwordMatches) {
       throw new ConflictException('Invalid email or password');
@@ -76,4 +83,3 @@ export class AuthService {
     };
   }
 }
-
